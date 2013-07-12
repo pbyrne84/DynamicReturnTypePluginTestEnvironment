@@ -37,4 +37,9 @@ namespace{
     function verify( $class ) {
 
     }
+
+
+    function maskMock( $class ){
+
+    }
 }

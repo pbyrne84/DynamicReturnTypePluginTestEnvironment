@@ -11,9 +11,13 @@ class Phockito {
         return '';
     }
 
-    public function mock( $verify ){
+    public function mock( $mock ){
         return '';
     }
 
+
+    public function maskMock( $mock ){
+        return '';
+    }
 
 }

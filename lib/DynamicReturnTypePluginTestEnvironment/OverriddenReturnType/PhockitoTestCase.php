@@ -7,13 +7,18 @@ class PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
 
     /** @var  Phockito */
-    protected $jePhockito;
+    protected $phockito;
 
     public function verify( $class ){
 
     }
 
     public function mock( $class ){
+
+    }
+
+
+    public function parentMaskMock( $class ){
 
     }
 

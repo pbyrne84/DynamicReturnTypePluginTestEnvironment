@@ -25,11 +25,6 @@ class VariableMethodCallTest extends PhockitoTestCase {
     }
 
 
-    private function localGetFullMock( $class ) {
-
-    }
-
-
     public function test_parentMethod_string() {
         $phockitoTestCase = new VariableMethodCallTest();
         $maxValueSet = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity');

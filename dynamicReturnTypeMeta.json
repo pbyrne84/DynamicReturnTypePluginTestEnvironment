@@ -9,6 +9,18 @@
             "class": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
             "method": "verify",
             "position": 0
+        }  ,
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
+            "method": "parentMaskMock",
+            "position": 0,
+            "mask" : "Test_%s_Model"
+        } ,
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
+            "method": "localMaskMock",
+            "position": 0,
+            "mask" : "Test_%s_Model"
         },
         {
             "class": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
@@ -25,6 +37,12 @@
             "class": "\\DynamicReturnTypePluginTestEnvironment\\LocalMethodCallTest",
             "method": "localGetFullMock",
             "position": 0
+        },
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method": "maskMock",
+            "position": 0,
+            "mask" : "Test_%s_Model"
         }
 
     ],
@@ -41,6 +59,13 @@
             "function": "\\mock",
             "position": 0
         }
+        ,
+        {
+            "function": "\\maskMock",
+            "position": 0,
+            "mask" : "Test_%s_Model"
+        }
+
     ]
 }
 

@@ -1,8 +1,5 @@
 <?php
-
 namespace DynamicReturnTypePluginTestEnvironment;
-
-
 
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;

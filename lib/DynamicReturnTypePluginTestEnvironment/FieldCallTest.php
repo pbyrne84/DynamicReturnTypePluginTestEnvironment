@@ -1,7 +1,5 @@
 <?php
 namespace DynamicReturnTypePluginTestEnvironment;
-
-
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\Phockito;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
@@ -45,42 +43,42 @@ class FieldCallTest extends PhockitoTestCase {
         $testEntity = $this->localPhockitoInstance->mock( new TestEntity( 'a', 'b', 'c' ) );
         $testEntity->getA();
 
-        $this->jePhockito
+        $this->phockito
                 ->verify( $testEntity )
                 ->getA();
     }
 
 
     public function test_parentInstanceCall_classConstant() {
-        $testEntity = $this->jePhockito->mock( TestEntity::CLASS_NAME );
+        $testEntity = $this->phockito->mock( TestEntity::CLASS_NAME );
         $testEntity->getA();
 
-        $this->jePhockito
+        $this->phockito
                 ->verify( $testEntity )
                 ->getA();
     }
 
 
     public function test_parentInstanceCall_string() {
-        $testEntity = $this->jePhockito->mock(
+        $testEntity = $this->phockito->mock(
             '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity'
         );
         $testEntity->getA();
 
-        $this->jePhockito
+        $this->phockito
                 ->verify( $testEntity )
                 ->getA();
     }
 
 
     public function test_parentInstanceCall_instance() {
-        $testEntity = $this->jePhockito->mock( new TestEntity( 'a', 'b', 'c' ) );
+        $testEntity = $this->phockito->mock( new TestEntity( 'a', 'b', 'c' ) );
         $testEntity->getA();
 
-        $testEntity1 = $this->jePhockito->verify( $testEntity );
+        $testEntity1 = $this->phockito->verify( $testEntity );
         $testEntity1->getA();
 
-        $this->jePhockito
+        $this->phockito
                 ->verify( $testEntity )
                 ->getA();
     }
