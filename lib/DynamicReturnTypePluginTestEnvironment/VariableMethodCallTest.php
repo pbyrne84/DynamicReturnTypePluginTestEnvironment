@@ -3,7 +3,6 @@
 namespace DynamicReturnTypePluginTestEnvironment;
 
 
-
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
 
@@ -17,17 +16,18 @@ class VariableMethodCallTest extends PhockitoTestCase {
 
     public function test_parentMethod_classConstant() {
         $phockitoTestCase = new VariableMethodCallTest();
-        $maxValueSet = $phockitoTestCase->mock( TestEntity::CLASS_NAME  );
+        $maxValueSet      = $phockitoTestCase->mock( TestEntity::CLASS_NAME );
         $maxValueSet->getA();
 
         $phockitoTestCase
-                ->verify( $maxValueSet )->getA();
+                ->verify( $maxValueSet )
+                ->getA();
     }
 
 
     public function test_parentMethod_string() {
         $phockitoTestCase = new VariableMethodCallTest();
-        $maxValueSet = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity');
+        $maxValueSet      = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
         $maxValueSet->getA();
 
         $phockitoTestCase
@@ -38,8 +38,8 @@ class VariableMethodCallTest extends PhockitoTestCase {
 
     public function test_parentMethod_instance() {
         $phockitoTestCase = new VariableMethodCallTest();
-        $class       = new TestEntity( 'a', 'b', 'c');
-        $maxValueSet = $phockitoTestCase->mock( $class );
+        $class            = new TestEntity( 'a', 'b', 'c' );
+        $maxValueSet      = $phockitoTestCase->mock( $class );
         $maxValueSet->getA();
 
         $phockitoTestCase

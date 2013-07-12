@@ -4,9 +4,10 @@ namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType {
 
     /**
      * @param $class
+     *
      * @return mixed
      */
-    function mock( $class  ) {
+    function mock( $class ) {
         return '';
 
     }
@@ -19,19 +20,20 @@ namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType {
 }
 
 
-
-namespace{
+namespace {
     /**
      * @param $class
+     *
      * @return mixed
      */
-    function mock( $class  ) {
+    function mock( $class ) {
         return '';
 
     }
 
     /**
      * @return mixed
+     *
      * @param $class
      */
     function verify( $class ) {
@@ -39,7 +41,7 @@ namespace{
     }
 
 
-    function maskMock( $class ){
+    function maskMock( $class ) {
 
     }
 }

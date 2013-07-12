@@ -9,6 +9,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
 
     private $localPhockito;
 
+
     function __construct() {
         $this->localPhockito = new Phockito();
     }
@@ -18,6 +19,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $test_Foo_Model = $this->phockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
     }
+
 
     public function test_stringPLocalField() {
         $test_Foo_Model = $this->localPhockito->maskMock( 'Foo' );

@@ -9,16 +9,18 @@ class PhockitoTestCase {
     /** @var  Phockito */
     protected $phockito;
 
-    public function verify( $class ){
+
+    public function verify( $class ) {
 
     }
 
-    public function mock( $class ){
+
+    public function mock( $class ) {
 
     }
 
 
-    public function parentMaskMock( $class ){
+    public function parentMaskMock( $class ) {
 
     }
 

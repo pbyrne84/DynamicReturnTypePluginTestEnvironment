@@ -27,13 +27,11 @@ class FunctionCallTest extends PhockitoTestCase {
 
     public function test_namesSpacedFunctionCall_instance() {
         $maxValueSet = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
-            new TestEntity( 'a','b','c')
+            new TestEntity( 'a', 'b', 'c' )
         );
 
         verify( $maxValueSet )->getA();
     }
-
-
 
 
 }
