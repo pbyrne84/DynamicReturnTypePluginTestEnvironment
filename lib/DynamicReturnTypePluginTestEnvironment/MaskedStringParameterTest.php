@@ -44,6 +44,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
 
 
     public function test_functionCall() {
-        maskMock( 'Foo' );
+        $test_Foo_Model = maskMock( 'Foo' );
+        $test_Foo_Model->getFoo();
     }
 }
