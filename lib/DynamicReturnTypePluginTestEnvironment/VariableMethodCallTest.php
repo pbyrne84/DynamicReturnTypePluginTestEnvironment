@@ -16,35 +16,47 @@ class VariableMethodCallTest extends PhockitoTestCase {
 
     public function test_parentMethod_classConstant() {
         $phockitoTestCase = new VariableMethodCallTest();
-        $maxValueSet      = $phockitoTestCase->mock( TestEntity::CLASS_NAME );
-        $maxValueSet->getA();
+        $testEntity      = $phockitoTestCase->mock( TestEntity::CLASS_NAME );
+        $testEntity->getA();
 
         $phockitoTestCase
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
     }
+
+    private function passAsTypeHint( TestEntity $testEntity ) {
+
+    }
+
 
 
     public function test_parentMethod_string() {
         $phockitoTestCase = new VariableMethodCallTest();
-        $maxValueSet      = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
-        $maxValueSet->getA();
+        $testEntity      = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
+        $testEntity->getA();
 
         $phockitoTestCase
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
     }
 
 
     public function test_parentMethod_instance() {
         $phockitoTestCase = new VariableMethodCallTest();
         $class            = new TestEntity( 'a', 'b', 'c' );
-        $maxValueSet      = $phockitoTestCase->mock( $class );
-        $maxValueSet->getA();
+        $testEntity      = $phockitoTestCase->mock( $class );
+        $testEntity->getA();
 
         $phockitoTestCase
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+
     }
 
 }

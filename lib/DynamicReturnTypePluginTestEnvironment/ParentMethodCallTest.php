@@ -20,32 +20,43 @@ class ParentMethodCallTest extends PhockitoTestCase {
 
 
     public function test_parentMethod_classConstant() {
-        $maxValueSet = $this->mock( TestEntity::CLASS_NAME );
-        $maxValueSet->getA();
+        $testEntity = $this->mock( TestEntity::CLASS_NAME );
+        $testEntity->getA();
 
         $this
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
+    private function passAsTypeHint( TestEntity $testEntity ) {
+
     }
 
 
     public function test_parentMethod_string() {
-        $maxValueSet = $this->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
-        $maxValueSet->getA();
+        $testEntity = $this->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
+        $testEntity->getA();
 
         $this
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
     }
 
 
     public function test_parentMethod_instance() {
-        $maxValueSet = $this->mock( new TestEntity( 'a', 'b', 'c' ) );
-        $maxValueSet->getA();
+        $testEntity = $this->mock( new TestEntity( 'a', 'b', 'c' ) );
+        $testEntity->getA();
 
         $this
-                ->verify( $maxValueSet )
+                ->verify( $testEntity )
                 ->getA();
+
+        $this->passAsTypeHint( $testEntity );
     }
 
 }

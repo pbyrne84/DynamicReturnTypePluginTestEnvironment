@@ -9,28 +9,37 @@ class FunctionCallTest extends PhockitoTestCase {
 
 
     public function test_namesSpacedFunctionCall_classConstant() {
-        $maxValueSet = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::CLASS_NAME );
-        $maxValueSet->getA();
+        $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::CLASS_NAME );
+        $testEntity->getA();
 
-        verify( $maxValueSet )->getA();
+        verify( $testEntity )->getA();
+        $this->passAsTypeHint( $testEntity );
     }
 
 
     public function test_namesSpacedFunctionCall_string() {
-        $maxValueSet = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
+        $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
             '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity'
         );
 
-        verify( $maxValueSet )->getA();
+        verify( $testEntity )->getA();
+        $this->passAsTypeHint( $testEntity );
+
+    }
+
+    private function passAsTypeHint( TestEntity $testEntity ){
+
     }
 
 
     public function test_namesSpacedFunctionCall_instance() {
-        $maxValueSet = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
+        $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
             new TestEntity( 'a', 'b', 'c' )
         );
 
-        verify( $maxValueSet )->getA();
+        verify( $testEntity )->getA();
+        $this->passAsTypeHint( $testEntity );
+
     }
 
 
