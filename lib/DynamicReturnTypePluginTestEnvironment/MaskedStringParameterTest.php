@@ -6,7 +6,7 @@ use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase
 
 class MaskedStringParameterTest extends PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
-
+    /** @var Phockito */
     private $localPhockito;
 
 
@@ -18,18 +18,29 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     public function test_stringParentField() {
         $test_Foo_Model = $this->phockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
     }
 
 
     public function test_stringPLocalField() {
         $test_Foo_Model = $this->localPhockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+    }
+
+
+    private function testTypeHint( \Test_Foo_Model $test ){
+
     }
 
 
     public function test_parentMethod() {
         $test_Foo_Model = $this->parentMaskMock( 'Foo' );
         $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
     }
 
 
@@ -46,5 +57,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     public function test_functionCall() {
         $test_Foo_Model = maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
     }
 }
