@@ -30,6 +30,18 @@ class LocalMethodCallTest extends PhockitoTestCase {
         $this->passAsTypeHint( $testEntity );
     }
 
+    public function test_parentMethod_nativeClassConstant() {
+        $testEntity = $this->localGetFullMock( TestEntity::class );
+        $testEntity->getA();
+
+        $this
+                ->localGetFullMock( $testEntity )
+                ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
 
     private function localGetFullMock( $class ) {
 

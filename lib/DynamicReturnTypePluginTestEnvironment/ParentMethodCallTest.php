@@ -36,6 +36,18 @@ class ParentMethodCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_parentMethod_nativeClassConstant() {
+        $testEntity = $this->mock( TestEntity::class );
+        $testEntity->getA();
+
+        $this
+                ->verify( $testEntity )
+                ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
     public function test_parentMethod_string() {
         $testEntity = $this->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
         $testEntity->getA();

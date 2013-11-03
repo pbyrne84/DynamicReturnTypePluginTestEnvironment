@@ -26,6 +26,22 @@ class VariableMethodCallTest extends PhockitoTestCase {
         $this->passAsTypeHint( $testEntity );
     }
 
+
+    public function test_parentMethod_nativeClassConstant() {
+        $phockitoTestCase = new VariableMethodCallTest();
+        $testEntity      = $phockitoTestCase->mock( TestEntity::class );
+        $testEntity->getA();
+
+        $phockitoTestCase
+                ->verify( $testEntity )
+                ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
+
+
     private function passAsTypeHint( TestEntity $testEntity ) {
 
     }
