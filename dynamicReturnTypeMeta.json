@@ -44,6 +44,12 @@
             "position": 0,
             "mask"    : "Test_%s_Model"
         }
+        ,
+        {
+            "class": "\\BaseReality\\Provider\\Provider",
+            "method": "make",
+            "position": 0
+        }
 
     ],
     "functionCalls": [
@@ -65,7 +71,6 @@
             "position": 0,
             "mask"    : "Test_%s_Model"
         }
-
     ]
 }
 
