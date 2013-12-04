@@ -60,8 +60,8 @@ namespace DifferentNameSpace {
 
     $provider2 = getProvider2();
 
-    $implementingObj2 = $provider2->make( "" );
-    $implementingObj2->count();
+    $simpleXMLElement = $provider2->make( "" );
+    $simpleXMLElement->count();
 
     $provider1 = new Provider();
     $DOMDocument = $provider1->make( \DomDocument::class );
