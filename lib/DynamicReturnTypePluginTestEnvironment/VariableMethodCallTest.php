@@ -3,6 +3,7 @@
 namespace DynamicReturnTypePluginTestEnvironment;
 
 
+use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCaseFactory;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
 
@@ -47,7 +48,6 @@ class VariableMethodCallTest extends PhockitoTestCase {
     }
 
 
-
     public function test_parentMethod_string() {
         $phockitoTestCase = new VariableMethodCallTest();
         $testEntity      = $phockitoTestCase->mock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
@@ -72,7 +72,18 @@ class VariableMethodCallTest extends PhockitoTestCase {
                 ->getA();
 
         $this->passAsTypeHint( $testEntity );
-
     }
 
+
+    public function test_factoryCallCreatesInstance() {
+        $phockitoTestCaseFactory = new PhockitoTestCaseFactory();
+        $phockitoTestCase1 = $phockitoTestCaseFactory->createPhockitoTestCase();
+
+        $DOMDocument1 = $phockitoTestCase1->mock( '\DomDocument' );
+        $DOMDocument1->hasAttributes();
+
+        $phockitoTestCase2 = new PhockitoTestCase();
+        $DOMDocument2 = $phockitoTestCase2->mock( '\DomDocument' );
+        $DOMDocument2->hasAttributes();
+    }
 }
