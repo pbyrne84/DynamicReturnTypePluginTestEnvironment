@@ -2,17 +2,21 @@
 namespace DynamicReturnTypePluginTestEnvironment;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\Phockito;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
+use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCaseFactory;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
 
 class FieldCallTest extends PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
+
+    private $phockitoTestCaseFactory;
 
     /** @var Phockito */
     private $localPhockitoInstance;
 
 
     public function __construct() {
-        $this->localPhockitoInstance = new Phockito();
+        $this->localPhockitoInstance   = new Phockito();
+        $this->phockitoTestCaseFactory = new PhockitoTestCaseFactory();
     }
 
 
@@ -104,4 +108,17 @@ class FieldCallTest extends PhockitoTestCase {
                 ->verify( $testEntity )
                 ->getA();
     }
+
+
+    public function test_fieldCallToNonDocTypedFactory() {
+        $phockitoTestCase                           = $this->phockitoTestCaseFactory->createPhockitoTestCase();
+        $testEntityWhereTestCaseIsDefinedInVariable = $phockitoTestCase->mock( TestEntity::class );
+        $testEntityWhereTestCaseIsDefinedInVariable->getA();
+
+        $testEntity2 = $this->phockitoTestCaseFactory->createPhockitoTestCase()
+                ->mock( TestEntity::class );
+
+        $testEntity2->getA();
+    }
+
 }
