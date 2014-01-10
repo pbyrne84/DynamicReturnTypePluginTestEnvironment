@@ -6,6 +6,8 @@ namespace DynamicReturnTypePluginTestEnvironment\TestClasses;
 class TestEntity {
     const CLASS_NAME = __CLASS__;
 
+    const CLASS_NAME_AS_STRING  = '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity';
+
     /** @var string */
     private $a;
 

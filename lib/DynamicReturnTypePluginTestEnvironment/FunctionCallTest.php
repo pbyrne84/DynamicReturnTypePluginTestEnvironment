@@ -16,6 +16,16 @@ class FunctionCallTest extends PhockitoTestCase {
         $this->passAsTypeHint( $testEntity );
     }
 
+    public function test_namesSpacedFunctionCall_classStringConstant() {
+        $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::CLASS_NAME_AS_STRING );
+        $testEntity->getA();
+
+        verify( $testEntity )->getA();
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
+
 
     private function passAsTypeHint( TestEntity $testEntity ) {
 

@@ -30,6 +30,17 @@ class FieldCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_localInstanceCall_classStringConstant() {
+        $testEntity = $this->localPhockitoInstance->mock( TestEntity::CLASS_NAME_AS_STRING );
+        $testEntity->getA();
+
+        $this->localPhockitoInstance
+                ->verify( $testEntity )
+                ->getA();
+    }
+
+
+
     public function test_localInstanceCall_nativeClassConstant() {
         $testEntity = $this->localPhockitoInstance->mock( TestEntity::class );
         $testEntity->getA();
@@ -72,6 +83,18 @@ class FieldCallTest extends PhockitoTestCase {
                 ->verify( $testEntity )
                 ->getA();
     }
+
+
+    public function test_parentInstanceCall_classStringConstant() {
+        $testEntity = $this->phockito->mock( TestEntity::CLASS_NAME_AS_STRING );
+        $testEntity->getA();
+
+        $this->phockito
+                ->verify( $testEntity )
+                ->getA();
+    }
+
+
 
 
     public function test_parentInstanceCall_nativeClassConstant() {

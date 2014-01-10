@@ -40,6 +40,21 @@ class StaticCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_directStaticMethodCall_stringConstant() {
+        $testEntity = Phockito::mock( TestEntity::CLASS_NAME_AS_STRING );
+        PhockitoChild::verify( $testEntity )
+                ->getA();
+    }
+
+
+    public function test_parentStaticMethodCall_stringConstant() {
+        $testEntity = PhockitoChild::mock( TestEntity::CLASS_NAME_AS_STRING );
+        PhockitoChild::verify( $testEntity )
+                ->getA();
+    }
+
+
+
     public function test_directStaticMethodCall_nativeClassConstant() {
         $testEntity = Phockito::mock( TestEntity::class );
         PhockitoChild::verify( $testEntity )
