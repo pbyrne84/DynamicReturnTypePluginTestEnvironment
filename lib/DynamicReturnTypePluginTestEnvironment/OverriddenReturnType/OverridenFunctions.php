@@ -32,8 +32,6 @@ namespace {
     }
 
     /**
-     * @return mixed
-     *
      * @param $class
      */
     function verify( $class ) {
