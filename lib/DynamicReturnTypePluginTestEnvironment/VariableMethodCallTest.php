@@ -28,6 +28,20 @@ class VariableMethodCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_parentMethod_classStringConstant() {
+        $phockitoTestCase = new VariableMethodCallTest();
+        $testEntity      = $phockitoTestCase->mock( TestEntity::CLASS_NAME_AS_STRING );
+        $testEntity->getA();
+
+        $phockitoTestCase
+                ->verify( $testEntity )
+                ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
+
     public function test_parentMethod_nativeClassConstant() {
         $phockitoTestCase = new VariableMethodCallTest();
         $testEntity      = $phockitoTestCase->mock( TestEntity::class );

@@ -31,6 +31,20 @@ class ParentMethodCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_parentMethod_classStringConstant() {
+        $testEntity = $this->mock( TestEntity::CLASS_NAME_AS_STRING );
+        $testEntity->getA();
+
+        $this
+                ->verify( $testEntity )
+                ->getA();
+
+        $this->passAsTypeHint( $testEntity );
+    }
+
+
+
+
     private function passAsTypeHint( TestEntity $testEntity ) {
 
     }
