@@ -50,7 +50,13 @@
             "method": "make",
             "position": 0
         }
-
+        ,
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestSingleton",
+            "method": "getRepository",
+            "position": 0,
+            "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
+        }
     ],
     "functionCalls": [
         {
