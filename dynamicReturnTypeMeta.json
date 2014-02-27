@@ -57,6 +57,17 @@
             "position": 0,
             "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
         }
+        ,
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ClassBroker",
+            "method": "getClassWithoutMask",
+            "position": 0
+        } ,
+        {
+            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ServiceBroker",
+            "method": "getServiceWithoutMask",
+            "position": 0
+        }
     ],
     "functionCalls": [
         {
