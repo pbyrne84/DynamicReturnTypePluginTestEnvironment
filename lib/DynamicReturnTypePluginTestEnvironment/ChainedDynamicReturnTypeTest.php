@@ -31,7 +31,7 @@ class ChainedDynamicReturnTypeTest {
 
     public function test_chainedNoMask() {
         //need to rework custom signatures to allow chaining
-        //signature	signature	#Ђ#M#Ђ#P#C\DynamicReturnTypePluginTestEnvironment\ChainedDynamicReturnTypeTest.classBroker:getClassWithoutMask:#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ServiceBroker.CLASS_NAME|?:getServiceWithoutMask:#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\TestService.CLASS_NAME|?
+        //signature	signaturesignature	#Ђ#M#M#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ClassBroker.getClassWithoutMask:getServiceWithoutMask:#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\TestService.CLASS_NAME|?
         $testService = $this->classBroker->getClassWithoutMask( ServiceBroker::CLASS_NAME )
                 ->getServiceWithoutMask( TestService::CLASS_NAME );
 
