@@ -7,7 +7,7 @@ use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestSingleton;
 
-class SingletonCallTest extends PhockitoTestCase{
+class SingletonCallTest extends PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
 
 
@@ -38,7 +38,6 @@ class SingletonCallTest extends PhockitoTestCase{
     }
 
 
-
     public function test_getInstanceDocTypedStatic() {
         $testEntity = TestSingleton::getInstanceDocTypedStatic()
                 ->getPhockito()
@@ -54,14 +53,6 @@ class SingletonCallTest extends PhockitoTestCase{
 
         $testEntity->getA();
     }
-
-
-
-
-
-
-
-
 
 }
  
