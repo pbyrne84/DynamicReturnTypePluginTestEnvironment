@@ -24,6 +24,28 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
+    public function test_stringJavascriptFunctionCall() {
+        $test_Foo_Model = $this->phockito->javascriptMaskMock( 'Foo' );
+        $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+    }
+
+
+    public function test_stringJavascriptAliasingFunctionCall_User() {
+        $test_Foo_Model = $this->phockito->javascriptAliasingMock( 'Entity\User' );
+        $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+    }
+
+
+    public function test_stringJavascriptAliasingFunctionCall_TestEntity() {
+        $testEntity = $this->phockito->javascriptAliasingMock( 'Entity\Test' );
+        $testEntity->getA();
+    }
+
+
     private function testTypeHint( \Test_Foo_Model $test ) {
 
     }

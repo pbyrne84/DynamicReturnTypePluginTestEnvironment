@@ -46,37 +46,52 @@
         }
         ,
         {
-            "class": "\\BaseReality\\Provider\\Provider",
-            "method": "make",
+            "class"         : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"        : "javascriptMaskMock",
+            "position"      : 0,
+            "javascriptCall": ["JavascriptReplacementCallback.js", "replaceWithJavascriptMask"]
+        }
+        ,
+        {
+            "class"         : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"        : "javascriptAliasingMock",
+            "position"      : 0,
+            "javascriptCall": ["JavascriptReplacementCallback.js", "replaceWithJavasctriptAliasing"]
+        }
+        ,
+
+        {
+            "class"   : "\\BaseReality\\Provider\\Provider",
+            "method"  : "make",
             "position": 0
         }
         ,
         {
-            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestSingleton",
-            "method": "getRepository",
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestSingleton",
+            "method"  : "getRepository",
             "position": 0,
             "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
         }
         ,
         {
-            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ClassBroker",
-            "method": "getClassWithoutMask",
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ClassBroker",
+            "method"  : "getClassWithoutMask",
             "position": 0
         } ,
         {
-            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ServiceBroker",
-            "method": "getServiceWithoutMask",
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ServiceBroker",
+            "method"  : "getServiceWithoutMask",
             "position": 0
         },
         {
-            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ClassBroker",
-            "method": "getClassUsingMask",
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ClassBroker",
+            "method"  : "getClassUsingMask",
             "position": 0,
             "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
         } ,
         {
-            "class": "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ServiceBroker",
-            "method": "getServiceUsingMask",
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\ServiceBroker",
+            "method"  : "getServiceUsingMask",
             "position": 0,
             "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
         }

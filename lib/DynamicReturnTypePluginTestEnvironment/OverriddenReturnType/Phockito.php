@@ -21,4 +21,14 @@ class Phockito {
         return '';
     }
 
+
+    public static function javascriptMaskMock( $mock ) {
+
+    }
+
+
+    public static function javascriptAliasingMock( $mock ) {
+
+    }
+
 }
