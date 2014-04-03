@@ -31,4 +31,16 @@ class Phockito {
 
     }
 
+
+    public static function groovyMaskMock( $mock ) {
+
+    }
+
+
+    public static function groovyAliasingMock( $mock ) {
+
+    }
+
+
+
 }

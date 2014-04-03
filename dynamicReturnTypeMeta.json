@@ -44,7 +44,7 @@
             "position": 0,
             "mask"    : "Test_%s_Model"
         }
-        ,
+        ,  
         {
             "class"           : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
             "method"          : "javascriptMaskMock",
@@ -59,7 +59,20 @@
             "fileFunctionCall": ["JavaScriptReplacementCallback.js", "replaceWithJavaScriptAliasing"]
         }
         ,
-
+        {
+            "class"           : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"          : "groovyMaskMock",
+            "position"        : 0,
+            "fileFunctionCall": ["GroovyReplacementCallback.groovy", "replaceWithGroovyMask"]
+        }
+        ,
+        {
+            "class"           : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"          : "groovyAliasingMock",
+            "position"        : 0,
+            "fileFunctionCall": ["GroovyReplacementCallback.groovy", "replaceWithGroovyAliasing"]
+        }
+        ,
         {
             "class"   : "\\BaseReality\\Provider\\Provider",
             "method"  : "make",

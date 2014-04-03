@@ -46,6 +46,23 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
+    public function test_stringGroovyAliasingFunctionCall_User() {
+        $test_Foo_Model = $this->phockito->groovyAliasingMock( 'Entity\User' );
+        $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+    }
+
+
+    public function test_stringGroovyAliasingFunctionCall_TestEntity() {
+        $testEntity = $this->phockito->groovyAliasingMock( 'Entity\Test' );
+        $testEntity->getA();
+    }
+
+
+
+
+
     private function testTypeHint( \Test_Foo_Model $test ) {
 
     }
