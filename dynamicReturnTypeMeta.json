@@ -46,17 +46,17 @@
         }
         ,
         {
-            "class"         : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
-            "method"        : "javascriptMaskMock",
-            "position"      : 0,
-            "javascriptCall": ["JavascriptReplacementCallback.js", "replaceWithJavascriptMask"]
+            "class"           : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"          : "javascriptMaskMock",
+            "position"        : 0,
+            "fileFunctionCall": ["JavaScriptReplacementCallback.js", "replaceWithJavaScriptMask"]
         }
         ,
         {
-            "class"         : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
-            "method"        : "javascriptAliasingMock",
-            "position"      : 0,
-            "javascriptCall": ["JavascriptReplacementCallback.js", "replaceWithJavasctriptAliasing"]
+            "class"           : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"          : "javascriptAliasingMock",
+            "position"        : 0,
+            "fileFunctionCall": ["JavaScriptReplacementCallback.js", "replaceWithJavaScriptAliasing"]
         }
         ,
 
