@@ -1,9 +1,9 @@
-function replaceWithJavascriptMask( className, methodName, returnTypeNameSpace, returnTypeClass ) {
+function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass, className, methodName ) {
     return "Test_" + returnTypeClass + "_Model";
 }
 
 
-function replaceWithJavasctriptAliasing( className, methodName, returnTypeNameSpace, returnTypeClass ){
+function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass, className, methodName  ){
     if( returnTypeNameSpace == 'Entity' ) {
         if( returnTypeClass == 'User' ) {
             return 'Test_Foo_Model';
