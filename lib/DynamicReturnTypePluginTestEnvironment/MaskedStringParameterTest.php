@@ -39,6 +39,13 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $this->testTypeHint( $test_Foo_Model );
     }
 
+    public function test_stringJavascriptAliasingFunctionCall_passedObjectIsReturnedOutAsScriptFindsNoMatch() {
+        $DOMDocument = $this->phockito->javascriptAliasingMock( new \DOMDocument() );
+        $DOMDocument->saveXML();
+    }
+
+
+
 
     public function test_stringJavascriptAliasingFunctionCall_TestEntity() {
         $testEntity = $this->phockito->javascriptAliasingMock( 'Entity\Test' );
