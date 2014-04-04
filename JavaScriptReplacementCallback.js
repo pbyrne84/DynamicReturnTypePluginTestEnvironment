@@ -1,3 +1,6 @@
+//com.ptby.dynamicreturntypeplugin.scripting.api.ExecutingScriptApi
+var api;
+
 function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass, className, methodName ) {
     return "Test_" + returnTypeClass + "_Model";
 }

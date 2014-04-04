@@ -16,7 +16,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-   public function test_stringParentField() {
+    public function test_stringParentField() {
         $test_Foo_Model = $this->phockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
@@ -39,12 +39,11 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $this->testTypeHint( $test_Foo_Model );
     }
 
+
     public function test_stringJavascriptAliasingFunctionCall_passedObjectIsReturnedOutAsScriptFindsNoMatch() {
         $DOMDocument = $this->phockito->javascriptAliasingMock( new \DOMDocument() );
-        $DOMDocument->saveXML();
+        $DOMDocument->saveXML(); 
     }
-
-
 
 
     public function test_stringJavascriptAliasingFunctionCall_TestEntity() {
@@ -53,8 +52,15 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_stringGroovyAliasingFunctionCall_User() {
+    public function test_stringGroovyAliasingFunctionCall_User_byMethodCall() {
         $test_Foo_Model = $this->phockito->groovyAliasingMock( 'Entity\User' );
+        $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+    }
+
+    public function test_stringGroovyAliasingFunctionCall_User_byFunctionCall() {
+        $test_Foo_Model = aliasMock( 'Entity\User' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
@@ -67,11 +73,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-
-
-
     private function testTypeHint( \Test_Foo_Model $test ) {
-
     }
 
 
@@ -98,6 +100,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $this->testTypeHint( $test_Foo_Model );
     }
 
+
     public function test_staticMethod() {
         $test_Foo_Model = PhockitoTestCase::parentMaskMock( 'Foo' );
         $test_Foo_Model->getFoo();
@@ -122,5 +125,4 @@ class MaskedStringParameterTest extends PhockitoTestCase {
 
         $this->testTypeHint( $test_Foo_Model );
     }
-
 }
