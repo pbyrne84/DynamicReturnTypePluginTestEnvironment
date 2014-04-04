@@ -2,12 +2,12 @@
 //Textmate bundle for phpstorm can be found here https://github.com/textmate/groovy.tmbundle
 //Alternatively/optionally groovy programming can be done in Intellij community edition if things get complicated
 //and unit testing is required
-def replaceWithGroovyMask( String returnTypeNameSpace, String returnTypeClass, String className, String methodName ) {
+def replaceWithGroovyMask( String returnTypeNameSpace, String returnTypeClass ) {
     return "Test_" + returnTypeClass + "_Model";
 };
 
 
-def replaceWithGroovyAliasing( String returnTypeNameSpace, String returnTypeClass, String className, String methodName  ){
+def replaceWithGroovyAliasing( String returnTypeNameSpace, String returnTypeClass ){
     if( returnTypeNameSpace == 'Entity' ) {
         if( returnTypeClass == 'User' ) {
             return 'Test_Foo_Model';

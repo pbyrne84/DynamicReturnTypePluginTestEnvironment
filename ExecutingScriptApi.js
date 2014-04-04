@@ -13,13 +13,60 @@
 var com = {
     ptby : {
         dynamicreturntypeplugin : {
-            scripting :{
+            scripting : {
                 api : {
-                    ExecutingScriptApi :  {
+                    ExecutingScriptApi          : {
                         /**
                          * @param {String} message
                          */
-                        writeToEventLog : function( message ) {
+                        writeToEventLog : function(message) {
+
+                        },
+                        /**
+                         * @return {com.ptby.dynamicreturntypeplugin.scripting.api.CallableScriptConfiguration}
+                         */
+                        getCallableScriptConfiguration : function() {
+
+                        }
+                        ,
+                        /**
+                         * @return {com.ptby.dynamicreturntypeplugin.scripting.api.PhpCallReferenceInfo}
+                         */
+                        getPhpCallReferenceInfo : function() {
+
+                        }
+                    },
+                    CallableScriptConfiguration : {
+                        /**
+                         * @return {String}
+                         */
+                        getFileLocation : function() {
+
+                        },
+                        /**
+                         * @return {String}
+                         */
+                        getCode         : function() {
+
+                        },
+                        /**
+                         * @return {String}
+                         */
+                        getCall         : function() {
+
+                        }
+                    },
+                    PhpCallReferenceInfo        : {
+                        /**
+                         * @return {String}
+                         */
+                        getJsonConfiguredClass : function() {
+
+                        },
+                        /**
+                         * @return {String}
+                         */
+                        getJsConfiguredMethod  : function() {
 
                         }
                     }

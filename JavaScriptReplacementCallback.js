@@ -3,12 +3,12 @@
  */
 var api = null;
 
-function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass, className, methodName ) {
+function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass ) {
     return "Test_" + returnTypeClass + "_Model";
 }
 
 
-function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass, className, methodName  ){
+function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass  ){
     if( returnTypeNameSpace == 'Entity' ) {
         if( returnTypeClass == 'User' ) {
             return 'Test_Foo_Model';
