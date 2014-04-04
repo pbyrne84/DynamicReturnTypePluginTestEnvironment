@@ -1,5 +1,7 @@
-//com.ptby.dynamicreturntypeplugin.scripting.api.ExecutingScriptApi
-var api;
+/**
+ * @type{com.ptby.dynamicreturntypeplugin.scripting.api.ExecutingScriptApi}
+ */
+var api = null;
 
 function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass, className, methodName ) {
     return "Test_" + returnTypeClass + "_Model";
@@ -14,7 +16,6 @@ function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass, cl
             return 'DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestEntity';
         }
     }
-
 
     if( returnTypeNameSpace == '' ) {
         return returnTypeClass;
