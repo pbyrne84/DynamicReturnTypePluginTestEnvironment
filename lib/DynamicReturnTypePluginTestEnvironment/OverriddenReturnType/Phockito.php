@@ -7,17 +7,21 @@ class Phockito {
     const CLASS_NAME = __CLASS__;
 
 
-    public static function verify( $verify ) {
+    public static function verify( /** @noinspection PhpUnusedParameterInspection */
+            /** @noinspection PhpUnusedParameterInspection */
+            $verify ) {
         return '';
     }
 
 
-    public static function mock( $mock ) {
+    public static function mock( /** @noinspection PhpUnusedParameterInspection */
+            $mock ) {
         return '';
     }
 
 
-    public static function maskMock( $mock ) {
+    public static function maskMock( /** @noinspection PhpUnusedParameterInspection */
+            $mock ) {
         return '';
     }
 

@@ -7,7 +7,8 @@ namespace DynamicReturnTypePluginTestEnvironment\NonMatchingReturnType {
      *
      * @return \SimpleXMLElement
      */
-    function mock( $class ) {
+    function mock( /** @noinspection PhpUnusedParameterInspection */
+            $class ) {
         return '';
 
     }
@@ -17,7 +18,8 @@ namespace DynamicReturnTypePluginTestEnvironment\NonMatchingReturnType {
      *
      * @return int
      */
-    function verify( $class ) {
+    function verify( /** @noinspection PhpUnusedParameterInspection */
+            $class ) {
         return 0;
     }
 

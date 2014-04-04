@@ -1,3 +1,4 @@
+//noinspection JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,FunctionWithInconsistentReturnsJS
 /**
  * Javascript file to allow completion of com.ptby.dynamicreturntypeplugin.scripting.api.ExecutingScriptApi (JSDoc)
  * http://usejsdoc.org/tags-type.html

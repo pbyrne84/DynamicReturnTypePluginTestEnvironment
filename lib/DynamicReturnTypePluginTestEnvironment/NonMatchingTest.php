@@ -26,6 +26,7 @@ class NonMatchingTest extends NonMatchingTestCase {
         $simpleXMLElement2->addAttribute( '', '');
 
         //Should still equate to string
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $verify = $this->verify( '' );
     }
 
@@ -47,6 +48,7 @@ class NonMatchingTest extends NonMatchingTestCase {
         $simpleXMLElement2->addAttribute( '', '');
 
         //Should still equate to string
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $verify = $this->nonMatchingObject->verify( '' );
     }
 
@@ -59,6 +61,7 @@ class NonMatchingTest extends NonMatchingTestCase {
         $simpleXMLElement2->addAttribute( '', '');
 
         //Should still equate to string
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $verify = $this->localNonMatchingObject->verify( '' );
     }
 
@@ -73,6 +76,7 @@ class NonMatchingTest extends NonMatchingTestCase {
         $simpleXMLElement2->addAttribute( '', '');
 
         //Returns int|mixed|void with plugin disabled when it should be int
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $int = \DynamicReturnTypePluginTestEnvironment\NonMatchingReturnType\verify( 'banana' );
     }
 
@@ -81,7 +85,8 @@ class NonMatchingTest extends NonMatchingTestCase {
      * @param $class
      * @return \SimpleXMLElement
      */
-    private function localGetFullMock( $class ) {
+    private function localGetFullMock( /** @noinspection PhpUnusedParameterInspection */
+            $class ) {
         return new \SimpleXMLElement('');
     }
 

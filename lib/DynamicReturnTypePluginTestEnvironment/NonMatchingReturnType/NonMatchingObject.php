@@ -12,7 +12,8 @@ class NonMatchingObject {
      *
      * @return string
      */
-    public function verify( $verify ) {
+    public function verify( /** @noinspection PhpUnusedParameterInspection */
+            $verify ) {
         return '';
     }
 
@@ -22,12 +23,14 @@ class NonMatchingObject {
      *
      * @return \SimpleXmlElement
      */
-    public function mock( $mock ) {
+    public function mock( /** @noinspection PhpUnusedParameterInspection */
+            $mock ) {
         return '';
     }
 
 
-    public function maskMock( $mock ) {
+    public function maskMock( /** @noinspection PhpUnusedParameterInspection */
+            $mock ) {
         return '';
     }
 

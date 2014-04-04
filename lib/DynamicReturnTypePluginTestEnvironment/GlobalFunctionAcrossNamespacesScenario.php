@@ -33,19 +33,21 @@ namespace BaseReality\Provider {
 }
 
 namespace {
+    use BaseReality\Provider\Provider;
+    use BaseReality\Provider\Provider2;
 
     /**
-     * @return \BaseReality\Provider\Provider
+     * @return Provider
      */
     function getProvider() {
-        return new \BaseReality\Provider\Provider();
+        return new Provider();
     }
 
     /**
-     * @return \BaseReality\Provider\Provider2
+     * @return Provider2
      */
     function getProvider2() {
-        return new \BaseReality\Provider\Provider2();
+        return new Provider2();
     }
 
 }
@@ -82,6 +84,7 @@ namespace a{
      * @return \BaseReality\Provider\Provider3
      */
     function getProvider3() {
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
         return new \BaseReality\Provider\Provider3();
     }
 
@@ -97,9 +100,11 @@ namespace a{
     $implementingObj1->createElement( "a" );
 
     $provider3 = getProvider3();
+    /** @noinspection PhpUnusedLocalVariableInspection */
     $make = $provider3->make( "" );
 
     $provider3b = new Provider3();
+    /** @noinspection PhpUnusedLocalVariableInspection */
     $make1 = $provider3b->make( "" );
 
 }

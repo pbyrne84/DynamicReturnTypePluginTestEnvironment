@@ -7,7 +7,8 @@ namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType {
      *
      * @return mixed
      */
-    function mock( $class ) {
+    function mock( /** @noinspection PhpUnusedParameterInspection */
+            $class ) {
         return '';
 
     }
@@ -26,7 +27,8 @@ namespace {
      *
      * @return mixed
      */
-    function mock( $class ) {
+    function mock( /** @noinspection PhpUnusedParameterInspection */
+            $class ) {
         return '';
 
     }
