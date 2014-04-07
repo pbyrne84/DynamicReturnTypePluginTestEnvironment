@@ -24,8 +24,8 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_stringJavascriptFunctionCall() {
-        $test_Foo_Model = $this->phockito->javascriptMaskMock( 'Foo' );
+    public function test_stringGroovyAliasingFunctionCall_User() {
+        $test_Foo_Model = $this->phockito->groovyAliasingMock( 'Entity\User' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
