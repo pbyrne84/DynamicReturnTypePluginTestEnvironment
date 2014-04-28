@@ -23,6 +23,19 @@
             "mask"    : "Test_%s_Model"
         },
         {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
+            "method"  : "parentMaskMockList",
+            "position": 0,
+            "mask"    : "%s[]"
+        } ,
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
+            "method"  : "localMaskMockList",
+            "position": 0,
+            "mask"    : "%s[]"
+        },
+
+        {
             "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
             "method"  : "mock",
             "position": 0
@@ -45,6 +58,14 @@
             "mask"    : "Test_%s_Model"
         }
         ,
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"  : "maskMockList",
+            "position": 0,
+            "mask"    : "%s[]"
+        }
+        ,
+
         {
             "class"                        : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
             "method"                       : "javascriptMaskMock",
@@ -130,6 +151,14 @@
             "mask"    : "Test_%s_Model"
         }
         ,
+        ,
+        {
+            "function": "\\maskMockList",
+            "position": 0,
+            "mask"    : "%s[]"
+        }
+        ,
+
         {
             "function": "\\aliasMock",
             "position": 0,
