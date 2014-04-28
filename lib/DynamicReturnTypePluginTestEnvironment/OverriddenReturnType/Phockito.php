@@ -26,6 +26,15 @@ class Phockito {
     }
 
 
+    public static function maskMockList( /** @noinspection PhpUnusedParameterInspection */
+            $mock ) {
+        return '';
+    }
+
+
+
+
+
     public static function javascriptMaskMock( $mock ) {
 
     }

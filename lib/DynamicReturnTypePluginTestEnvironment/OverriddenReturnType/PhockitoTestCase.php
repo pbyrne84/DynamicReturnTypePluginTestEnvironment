@@ -25,4 +25,11 @@ class PhockitoTestCase {
     }
 
 
+    public function parentMaskMockList( $class ) {
+
+    }
+
+
+
+
 }

@@ -16,11 +16,19 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_stringParentField() {
+    public function test_stringParentField_single() {
         $test_Foo_Model = $this->phockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
+    }
+
+    public function test_stringParentField_list() {
+        $test_Foo_ModelList = $this->phockito->maskMockList( 'Test_Foo_Model' );
+        foreach( $test_Foo_ModelList as $test_Foo_Model ){
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
     }
 
 
@@ -77,15 +85,24 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_stringLocalField() {
+    public function test_stringLocalField_single() {
         $test_Foo_Model = $this->localPhockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
     }
 
+    public function test_stringLocalField_list() {
+        $test_Foo_ModeList = $this->localPhockito->maskMockList( 'Test_Foo_Model' );
+        foreach ( $test_Foo_ModeList as $test_Foo ) {
+            $test_Foo->getFoo();
+            $this->testTypeHint( $test_Foo );
+        }
+    }
 
-    public function test_stringStaticCall() {
+
+
+    public function test_stringStaticCall_single() {
         $test_Foo_Model = $this->phockito->maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
@@ -93,7 +110,18 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_parentMethod() {
+    public function test_stringStaticCall_list() {
+        $test_Foo_ModeList = $this->phockito->maskMockList( 'Test_Foo_Model' );
+        foreach ( $test_Foo_ModeList as $test_Foo ) {
+            $test_Foo->getFoo();
+            $this->testTypeHint( $test_Foo );
+        }
+    }
+
+
+
+
+    public function test_parentMethod_single() {
         $test_Foo_Model = $this->parentMaskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
@@ -101,12 +129,35 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_staticMethod() {
+    public function test_staticMethod_single() {
         $test_Foo_Model = PhockitoTestCase::parentMaskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
     }
+
+
+
+    public function test_parentMethod_list() {
+        $test_Foo_ModelList = $this->parentMaskMockList( 'Test_Foo_Model' );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model) {
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
+
+
+    }
+
+
+    public function test_staticMethod_list() {
+        $test_Foo_ModelList = PhockitoTestCase::parentMaskMockList( 'Test_Foo_Model' );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model) {
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
+
+    }
+
 
 
     public function test_localMethod() {
@@ -119,10 +170,23 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-    public function test_functionCall() {
+    public function test_functionCallSingle() {
         $test_Foo_Model = maskMock( 'Foo' );
         $test_Foo_Model->getFoo();
 
         $this->testTypeHint( $test_Foo_Model );
     }
+
+
+    public function test_functionCallList() {
+        $test_Foo_ModelList = maskMockList( 'Test_Foo_Model' );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model ) {
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
+
+    }
+
+
+
 }

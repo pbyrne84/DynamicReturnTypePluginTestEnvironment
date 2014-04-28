@@ -45,6 +45,12 @@ namespace {
 
     }
 
+    function maskMockList( $class ) {
+
+    }
+
+
+
 
     function aliasMock( $reference ){
 
