@@ -11,7 +11,7 @@ class Test_Foo_Model
 
 
     /**
-     * @return $this
+     * @return Test_Foo_Model
      */
     public function getThis(){
         return $this;
