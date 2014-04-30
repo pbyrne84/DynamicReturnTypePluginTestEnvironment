@@ -3,6 +3,7 @@ namespace DynamicReturnTypePluginTestEnvironment;
 
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\Phockito;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
+use Test_Foo_Model;
 
 class MaskedStringParameterTest extends PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
@@ -114,6 +115,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $test_Foo_ModeList = $this->phockito->maskMockList( 'Test_Foo_Model' );
         foreach ( $test_Foo_ModeList as $test_Foo ) {
             $test_Foo->getFoo();
+            $test_Foo->getThis()->getThis();
             $this->testTypeHint( $test_Foo );
         }
     }
@@ -144,9 +146,19 @@ class MaskedStringParameterTest extends PhockitoTestCase {
             $test_Foo_Model->getFoo();
             $this->testTypeHint( $test_Foo_Model );
         }
-
-
     }
+
+
+    public function test_parentMethodClassConstant_list() {
+        $test_Foo_ModelList = $this->parentMaskMockList( Test_Foo_Model::class );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model) {
+           // $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
+    }
+
+
+
 
 
     public function test_staticMethod_list() {
