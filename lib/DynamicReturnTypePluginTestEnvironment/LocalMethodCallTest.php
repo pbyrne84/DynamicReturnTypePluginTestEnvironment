@@ -6,90 +6,146 @@ namespace DynamicReturnTypePluginTestEnvironment;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\Phockito;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
+use DynamicReturnTypePluginTestEnvironment\TestClasses\TestInterface;
 
-class LocalMethodCallTest extends PhockitoTestCase {
+class LocalMethodCallTest extends PhockitoTestCase
+{
     const CLASS_NAME = __CLASS__;
 
     /** @var Phockito */
     private $localPhockitoInstance;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->localPhockitoInstance = new Phockito();
     }
 
 
-    public function test_parentMethod_classConstant() {
-        $testEntity = $this->localGetFullMock( TestEntity::CLASS_NAME );
+    public function test_parentMethod_classConstant()
+    {
+        $testEntity = $this->localGetFullMock(TestEntity::CLASS_NAME);
         $testEntity->getA();
+        $testEntity->getThis()->getA();
 
         $this
-                ->localGetFullMock( $testEntity )
-                ->getA();
+            ->localGetFullMock($testEntity)
+            ->getA();
 
-        $this->passAsTypeHint( $testEntity );
+        $this->passClassAsTypeHint($testEntity);
     }
 
 
-    public function test_parentMethod_classStringConstant() {
-        $testEntity = $this->localGetFullMock( TestEntity::CLASS_NAME_AS_STRING );
+    public function test_parentMethod_classStringConstant()
+    {
+        $testEntity = $this->localGetFullMock('\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity');
         $testEntity->getA();
+        $getThis = $testEntity->getThis();
+        $getThis->getThis();
 
         $this
-                ->localGetFullMock( $testEntity )
-                ->getA();
+            ->localGetFullMock($testEntity)
+            ->getA();
 
-        $this->passAsTypeHint( $testEntity );
+        $this->passClassAsTypeHint($testEntity);
     }
 
 
-
-
-    public function test_parentMethod_nativeClassConstant() {
-        $testEntity = $this->localGetFullMock( TestEntity::class );
+    public function test_parentMethod_nativeClassConstant()
+    {
+        $testEntity = $this->localGetFullMock(TestEntity::class);
         $testEntity->getA();
+        $getThis = $testEntity->getThis();
+        $getThis->getA();
+
 
         $this
-                ->localGetFullMock( $testEntity )
-                ->getA();
+            ->localGetFullMock($testEntity)
+            ->getA();
 
-        $this->passAsTypeHint( $testEntity );
+        $this->passClassAsTypeHint($testEntity);
     }
 
+    public function test_parentMethod_nativeIntefaceConstant()
+    {
+        $testEntity = $this->localGetFullMock(TestInterface::class);
+        $testEntity->getThis();
+        $getThis = $testEntity->getThis();
+        $getThis->getThis();
 
-
-    private function localGetFullMock( $class ) {
-
-    }
-
-
-    private function passAsTypeHint( TestEntity $testEntity ){
-
-    }
-
-
-    public function test_parentMethod_string() {
-        $testEntity = $this->localGetFullMock( '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity' );
-        $testEntity->getA();
 
         $this
-                ->localGetFullMock( $testEntity )
-                ->getA();
+            ->localGetFullMock($testEntity)
+            ->getThis();
 
-        $this->passAsTypeHint( $testEntity );
+        $this->passInterfaceAsTypeHint($testEntity);
     }
 
 
-    public function test_parentMethod_instance() {
-        $originalInstance = new TestEntity( 'a', 'b', 'c' );
-        $testEntity       = $this->localGetFullMock( $originalInstance );
-        $testEntity->getA();
+    public function test_parentMethod_customIntefaceConstant()
+    {
+        $testEntity = $this->localGetFullMock(TestInterface::INTERFACE_NAME);
+        $testEntity->getThis();
+        $getThis = $testEntity->getThis();
+        $getThis->getThis();
+
 
         $this
-                ->localGetFullMock( $testEntity )
-                ->getA();
+            ->localGetFullMock($testEntity)
+            ->getThis();
 
-        $this->passAsTypeHint( $testEntity );
+        $this->passInterfaceAsTypeHint($testEntity);
+    }
+
+
+
+
+
+    private function localGetFullMock($class)
+    {
+
+    }
+
+
+    private function passClassAsTypeHint(TestEntity $testEntity)
+    {
+
+    }
+
+    private function passInterfaceAsTypeHint(TestInterface $testEntity)
+    {
+
+    }
+
+
+    public function test_parentMethod_string()
+    {
+        $testEntity = $this->localGetFullMock('\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity');
+        $testEntity->getA();
+        $getThis = $testEntity->getThis();
+        $getThis->getThis();
+
+        $this
+            ->localGetFullMock($testEntity)
+            ->getA();
+
+        $this->passClassAsTypeHint($testEntity);
+    }
+
+
+    public function test_parentMethod_instance()
+    {
+        $originalInstance = new TestEntity('a', 'b', 'c');
+        $testEntity = $this->localGetFullMock($originalInstance);
+        $testEntity->getA();
+        $getThis = $testEntity->getThis();
+        $getThis->getThis();
+
+        $this
+            ->localGetFullMock($testEntity)
+            ->getA();
+
+        $this->passClassAsTypeHint($testEntity);
     }
 
 }

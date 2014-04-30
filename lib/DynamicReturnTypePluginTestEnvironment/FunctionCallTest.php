@@ -11,6 +11,7 @@ class FunctionCallTest extends PhockitoTestCase {
     public function test_namesSpacedFunctionCall_classConstant() {
         $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::CLASS_NAME );
         $testEntity->getA();
+        $testEntity->getThis()->getThis();
 
         verify( $testEntity )->getA();
         $this->passAsTypeHint( $testEntity );
@@ -19,6 +20,7 @@ class FunctionCallTest extends PhockitoTestCase {
     public function test_namesSpacedFunctionCall_classStringConstant() {
         $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::CLASS_NAME_AS_STRING );
         $testEntity->getA();
+        $testEntity->getThis()->getThis();
 
         verify( $testEntity )->getA();
         $this->passAsTypeHint( $testEntity );
@@ -35,6 +37,7 @@ class FunctionCallTest extends PhockitoTestCase {
     public function test_namesSpacedFunctionCall_nativeClassConstant() {
         $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock( TestEntity::class );
         $testEntity->getA();
+        $testEntity->getThis()->getThis();
 
         verify( $testEntity )->getA();
         $this->passAsTypeHint( $testEntity );
