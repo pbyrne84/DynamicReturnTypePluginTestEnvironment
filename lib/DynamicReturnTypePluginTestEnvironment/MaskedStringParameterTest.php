@@ -56,8 +56,10 @@ class MaskedStringParameterTest extends PhockitoTestCase {
 
 
     public function test_stringJavascriptAliasingFunctionCall_TestEntity() {
-        $testEntity = $this->phockito->javascriptAliasingMock( 'Entity\Test' );
-        $testEntity->getA();
+        $testEntities = $this->phockito->javascriptAliasingMock('Entity\Test');
+        foreach ($testEntities as $testEntity) {
+            $testEntity->getA();
+        }
     }
 
 

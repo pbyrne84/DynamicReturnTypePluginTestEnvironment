@@ -16,7 +16,7 @@ function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass  ){
         if( returnTypeClass == 'User' ) {
             return 'Test_Foo_Model';
         }else if( returnTypeClass == 'Test' ){
-            return 'DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestEntity';
+            return 'DynamicReturnTypePluginTestEnvironment\\TestClasses\\TestEntity[]';
         }
     }
 
