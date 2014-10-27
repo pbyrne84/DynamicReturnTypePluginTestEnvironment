@@ -114,7 +114,7 @@ class VariableMethodCallTest extends PhockitoTestCase {
         $phpUnitPartialMockUsingConstant->isMock();
         $phpUnitPartialMockUsingConstant->get();
 
-        $phpUnitPartialMockUsingString = $this->phpUnitPartialMock('\DynamicReturnTypePluginTestEnvironment\ChimiChanga');
+        $phpUnitPartialMockUsingString = $this->phpUnitPartialMock('\\DynamicReturnTypePluginTestEnvironment\ChimiChanga');
         $phpUnitPartialMockUsingString->isMock();
         $phpUnitPartialMockUsingString->get();
 

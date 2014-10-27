@@ -48,7 +48,7 @@ class FunctionCallTest extends PhockitoTestCase {
 
     public function test_namesSpacedFunctionCall_string() {
         $testEntity = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock(
-                '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity'
+                '\\DynamicReturnTypePluginTestEnvironment\TestClasses\\TestEntity'
         );
 
         verify( $testEntity )->getA();
