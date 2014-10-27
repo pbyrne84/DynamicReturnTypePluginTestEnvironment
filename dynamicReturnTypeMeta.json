@@ -65,6 +65,14 @@
             "mask"    : "%s[]"
         }
         ,
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
+            "method"  : "phpUnitPartialMock", 
+            "position": 0,
+            "mask"    : "%s|\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PHPUnit_Framework_MockObject_MockObject"
+        }
+        ,
+
 
         {
             "class"                        : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
@@ -150,7 +158,6 @@
             "position": 0,
             "mask"    : "Test_%s_Model"
         }
-        ,
         ,
         {
             "function": "\\maskMockList",

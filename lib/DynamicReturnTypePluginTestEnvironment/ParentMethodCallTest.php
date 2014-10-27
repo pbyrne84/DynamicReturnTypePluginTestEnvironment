@@ -67,7 +67,7 @@ class ParentMethodCallTest extends PhockitoTestCase {
         $testEntity->getA();
 
         $this
-                ->verify( $testEntity )
+                ->verify( $testEntity ) 
                 ->getA();
 
         $this->passAsTypeHint( $testEntity );

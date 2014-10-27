@@ -2,7 +2,8 @@
 /**
  * @type{com.ptby.dynamicreturntypeplugin.scripting.api.ExecutingScriptApi}
  */
-var api = null;
+var api;
+
 
 //noinspection JSUnusedGlobalSymbols
 function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass ) {
@@ -12,6 +13,7 @@ function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass ) {
 
 //noinspection JSUnusedGlobalSymbols
 function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass  ){
+
     if( returnTypeNameSpace == 'Entity' ) {
         if( returnTypeClass == 'User' ) {
             return 'Test_Foo_Model';

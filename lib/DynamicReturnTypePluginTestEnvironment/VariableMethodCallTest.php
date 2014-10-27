@@ -3,9 +3,16 @@
 namespace DynamicReturnTypePluginTestEnvironment;
 
 
+
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCaseFactory;
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\PhockitoTestCase;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity;
+
+class ChimiChanga{
+    public function get(){
+
+    }
+}
 
 class VariableMethodCallTest extends PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
@@ -99,5 +106,18 @@ class VariableMethodCallTest extends PhockitoTestCase {
         $phockitoTestCase2 = new PhockitoTestCase();
         $DOMDocument2 = $phockitoTestCase2->mock( '\DomDocument' );
         $DOMDocument2->hasAttributes();
+    }
+
+
+    public function test_partialMockMultiTypeMasking(){
+        $phpUnitPartialMockUsingConstant = $this->phpUnitPartialMock(ChimiChanga::class);
+        $phpUnitPartialMockUsingConstant->isMock();
+        $phpUnitPartialMockUsingConstant->get();
+
+        $phpUnitPartialMockUsingString = $this->phpUnitPartialMock('\DynamicReturnTypePluginTestEnvironment\ChimiChanga');
+        $phpUnitPartialMockUsingString->isMock();
+        $phpUnitPartialMockUsingString->get();
+
+
     }
 }

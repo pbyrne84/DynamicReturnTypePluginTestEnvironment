@@ -3,6 +3,10 @@
 namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType;
 
 
+interface PHPUnit_Framework_MockObject_MockObject{
+    public function isMock();
+}
+
 class PhockitoTestCase {
     const CLASS_NAME = __CLASS__;
 
@@ -16,6 +20,11 @@ class PhockitoTestCase {
 
 
     public function mock( $class ) {
+
+    }
+
+
+    public function phpUnitPartialMock( $partialMock ){
 
     }
 
