@@ -43,7 +43,11 @@ class ParentMethodCallTest extends PhockitoTestCase {
     }
 
 
-
+    public function test_localMethodCallCreatesInstanceThenChainedChildCall() {
+        $testFactory1 = $this->mock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+        $testFactory2 = $testFactory1->mock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+        $testFactory2->test_parentMethod_classConstant();
+    }
 
     private function passAsTypeHint( TestEntity $testEntity ) {
 

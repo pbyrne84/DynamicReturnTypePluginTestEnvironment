@@ -22,6 +22,13 @@ class LocalMethodCallTest extends PhockitoTestCase
     }
 
 
+    public function test_localMethodCallCreatesInstanceThenChainedChildCall() {
+        $testFactory1 = $this->localGetFullMock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+        $testFactory2 = $testFactory1->localGetFullMock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+        $testFactory2->test_parentMethod_classConstant();
+    }
+
+
     public function test_parentMethod_classConstant()
     {
         $testEntity = $this->localGetFullMock(TestEntity::CLASS_NAME);
