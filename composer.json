@@ -1,0 +1,14 @@
+{
+    "name": "admin/dynamic-return-type-plugin-test-environment",
+    "description": "Test environment for plugin",
+    "require": {
+        "symfony/symfony": "2.6"
+    },
+    "authors": [
+        {
+            "name": "Patrick Byrne",
+            "email": "pbyrne84@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
