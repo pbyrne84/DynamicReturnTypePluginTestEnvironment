@@ -1,6 +1,8 @@
 <?php
+namespace DynamicReturnTypePluginTestEnvironment\Symfony;
 use DynamicReturnTypePluginTestEnvironment\TestClasses\TestService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 
 class TestController extends Controller {
     const CLASS_NAME = __CLASS__;
@@ -17,7 +19,7 @@ class TestController extends Controller {
 
     public function test_stringParameter_classConstantAlias() {
         $serviceBroker = $this->get( 'service_broker' );
-        $testService   = $serviceBroker->getServiceWithoutMask( \DynamicReturnTypePluginTestEnvironment\TestClasses\TestService::CLASS_NAME );
+        $testService   = $serviceBroker->getServiceWithoutMask( TestService::CLASS_NAME );
 
         $testService->run();
 
@@ -27,7 +29,7 @@ class TestController extends Controller {
 
     public function test_stringParameter_classConstant() {
         $serviceBroker = $this->get( 'service_broker' );
-        $testService   = $serviceBroker->getServiceWithoutMask( \DynamicReturnTypePluginTestEnvironment\TestClasses\TestService::class );
+        $testService   = $serviceBroker->getServiceWithoutMask( TestService::class );
 
         $testService->run();
 
@@ -44,6 +46,20 @@ class TestController extends Controller {
 
         return $this->render( 'default/index.html.twig' );
     }
+
+
+
+    public function test_stringParameter_noLeadingSlashChaining() {
+        $testService   = $this->get( 'service_broker' )->getServiceWithoutMask( 'DynamicReturnTypePluginTestEnvironment\TestClasses\TestService' );
+
+        $testService->run();
+
+        return $this->render( 'default/index.html.twig' );
+    }
+
+
+
+
 
 
 }
