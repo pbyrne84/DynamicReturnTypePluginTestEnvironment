@@ -95,6 +95,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $this->testTypeHint( $test_Foo_Model );
     }
 
+
     public function test_stringLocalField_list() {
         $test_Foo_ModeList = $this->localPhockito->maskMockList( 'Test_Foo_Model' );
         foreach ( $test_Foo_ModeList as $test_Foo ) {
