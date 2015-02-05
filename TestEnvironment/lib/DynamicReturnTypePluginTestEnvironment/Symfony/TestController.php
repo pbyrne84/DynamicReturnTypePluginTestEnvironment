@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class TestController extends Controller {
     const CLASS_NAME = __CLASS__;
+    private $meow = 'moo';
 
 
     public function test_stringParameter_leadingSlash() {
@@ -25,8 +26,8 @@ class TestController extends Controller {
 
         return $this->render( 'default/index.html.twig' );
     }
-
-
+//signature	#Ђ#M#M#C\DynamicReturnTypePluginTestEnvironment\Symfony\TestController.get:getServiceWithoutMask:DynamicReturnTypePluginTestEnvironment\TestClasses\TestService
+//signature	#Ђ#M#M#C\DynamicReturnTypePluginTestEnvironment\Symfony\TestController.get:getServiceWithoutMask:DynamicReturnTypePluginTestEnvironment\TestClasses\TestService
     public function test_stringParameter_classConstant() {
         $serviceBroker = $this->get( 'service_broker' );
         $testService   = $serviceBroker->getServiceWithoutMask( TestService::class );
