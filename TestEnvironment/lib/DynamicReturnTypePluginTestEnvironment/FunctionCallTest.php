@@ -68,4 +68,11 @@ class FunctionCallTest extends PhockitoTestCase {
     }
 
 
+    public function test_chainFunctionOntoProviderInstance(){
+        \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\mock('DynamicReturnTypePluginTestEnvironment\TestClasses\ServiceBroker')
+            ->getServiceWithoutMask('DomDocument')
+            ->getElementsByTagName("tag");
+    }
+
+
 }
