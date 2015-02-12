@@ -161,9 +161,6 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     }
 
 
-
-
-
     public function test_staticMethod_list() {
         $test_Foo_ModelList = PhockitoTestCase::parentMaskMockList( 'Test_Foo_Model' );
         foreach ( $test_Foo_ModelList as $test_Foo_Model) {
@@ -172,7 +169,6 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         }
 
     }
-
 
 
     public function test_localMethod() {
@@ -201,7 +197,4 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         }
 
     }
-
-
-
 }
