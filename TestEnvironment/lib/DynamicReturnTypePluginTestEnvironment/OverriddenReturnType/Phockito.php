@@ -35,25 +35,29 @@ class Phockito {
 
 
 
-    public static function javascriptMaskMock( $mock ) {
+    public function javascriptMaskMock( $mock ) {
 
     }
 
 
-    public static function javascriptAliasingMock( $mock ) {
+    public function javascriptAliasingMock( $mock ) {
 
     }
 
 
-    public static function groovyMaskMock( $mock ) {
+    public function groovyMaskMock( $mock ) {
 
     }
 
 
-    public static function groovyAliasingMock( $mock ) {
+    public function groovyAliasingMock( $mock ) {
 
     }
 
 
+
+}
+
+class ChildPhockitoTestCase extends Phockito{
 
 }
