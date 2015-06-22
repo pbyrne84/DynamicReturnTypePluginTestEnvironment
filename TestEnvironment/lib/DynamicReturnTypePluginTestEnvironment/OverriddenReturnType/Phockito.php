@@ -3,7 +3,7 @@
 namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType;
 
 
-class Phockito {
+class Phockito implements \ArrayAccess{
     const CLASS_NAME = __CLASS__;
 
 
@@ -33,8 +33,6 @@ class Phockito {
 
 
 
-
-
     public function javascriptMaskMock( $mock ) {
 
     }
@@ -55,8 +53,24 @@ class Phockito {
     }
 
 
+    public function offsetExists( $offset ) {
+        // TODO: Implement offsetExists() method.
+    }
 
-}
+
+    public function offsetGet( $offset ) {
+        // TODO: Implement offsetGet() method.
+    }
+
+
+    public function offsetSet( $offset, $value ) {
+        // TODO: Implement offsetSet() method.
+    }
+
+
+    public function offsetUnset( $offset ) {
+        // TODO: Implement offsetUnset() method.
+}}
 
 class ChildPhockitoTestCase extends Phockito{
 

@@ -94,6 +94,11 @@
             "position"                     : 0,
             "fileReturnTypeReplacementCall": ["GroovyReplacementCallback.groovy", "replaceWithGroovyMask"]
         }
+        ,{
+            "class"                        : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
+            "method"                       : "offsetGet",
+            "position"                     : 0
+        }
         ,
         {
             "class"                        : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\Phockito",
