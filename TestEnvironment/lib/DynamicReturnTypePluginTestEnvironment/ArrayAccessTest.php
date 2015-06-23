@@ -4,12 +4,18 @@ namespace DynamicReturnTypePluginTestEnvironment;
 
 
 use DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\Phockito;
+use DynamicReturnTypePluginTestEnvironment\TestClasses\FileList;
 
 class ArrayAccessTest {
     const CLASS_NAME = __CLASS__;
 
     /** @var  Phockito */
-    private $phockito;
+    protected $phockito;
+
+    /**
+     * @var FileList
+     */
+    protected $fileList;
 
 
     public function test_variableStringArrayAccess(  ) {
@@ -35,4 +41,56 @@ class ArrayAccessTest {
         $domDocument = $this->phockito[ \DomDocument::class ];
         $domDocument->saveXml();
     }
+
+
+    /**
+     * @return Phockito
+     */
+    protected function getPhockito(){
+        return $this->phockito;
+    }
+
+
+    public function test_returnTypeArrayDeReferencing( ) {
+        $this->getPhockito()[ \DomDocument::class ]->saveXML();
+    }
+
+
+    /**
+     * @param \SplFileInfo[] $files
+     */
+    public function test_normalArraysAreLeftAloneParameter( array $files ){
+        foreach ( $files as $file ) {
+            $file->getPath();
+        }
+
+        $files[ 0 ]->getATime();
+    }
+
+
+    /**
+     * @param FileList $files
+     */
+    public function test_normalArrayObjectsAreLeftAloneParameter( FileList $files ){
+        foreach ( $files as $file ) {
+            $file->getPath();
+        }
+
+        $files[ 0 ]->getPath();
+        $files->offsetGet( 0 )
+                ->getPath();
+    }
+
+
+    public function test_normalArraysAreLeftAloneField( ){
+        foreach ( $this->fileList as $file ) {
+            $file->getPath();
+        }
+
+        $this->fileList[ 0 ]->getATime();
+    }
+
 }
+
+
+
