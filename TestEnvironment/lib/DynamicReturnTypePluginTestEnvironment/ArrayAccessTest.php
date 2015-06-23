@@ -90,6 +90,13 @@ class ArrayAccessTest {
         $this->fileList[ 0 ]->getATime();
     }
 
+
+    public function test_ContainerToContainer_noneChaining(  ) {
+        $phockito = $this->phockito[ Phockito::class ];
+        $phockito[ \DomDocument::class]->attributes;
+
+    }
+
 }
 
 
