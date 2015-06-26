@@ -94,9 +94,20 @@ class ArrayAccessTest {
     public function test_ContainerToContainer_noneChaining(  ) {
         $phockito = $this->phockito[ Phockito::class ];
         $phockito[ \DomDocument::class]->attributes;
+    }
+
+    /** Not working yet... */
+    public function test_ContainerToContainer_chaining(  ) {
+        $domDocument = $this->phockito[ Phockito::class ][ \DomDocument::class];
+        $domDocument->attributes;
 
     }
 
+    /** Not working yet... */
+    public function test_ContainerToContainer_chaining2(  ) {
+        $domDocument = $this->phockito->mock( Phockito::class )[\DomDocument::class ];
+        $domDocument->attributes;
+    }
 }
 
 
