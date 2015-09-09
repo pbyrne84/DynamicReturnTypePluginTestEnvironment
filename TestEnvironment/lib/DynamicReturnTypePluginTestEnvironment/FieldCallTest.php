@@ -10,6 +10,10 @@ class FieldCallTest extends PhockitoTestCase {
 
     private $phockitoTestCaseFactory;
 
+    const LOCAL_TestEntity_CLASS_ALIAS = TestEntity::class;
+
+    const LOCAL_TestEntity_STRING_ALIAS = TestEntity::CLASS_NAME_AS_STRING;
+
     /** @var Phockito */
     private $localPhockitoInstance;
 
@@ -38,6 +42,28 @@ class FieldCallTest extends PhockitoTestCase {
                 ->verify( $testEntity )
                 ->getA();
     }
+
+
+    public function test_localInstanceCall_classConstantAlias() {
+        $testEntity = $this->localPhockitoInstance->mock( self::LOCAL_TestEntity_STRING_ALIAS );
+        $testEntity->getA();
+
+        $this->localPhockitoInstance
+                ->verify( $testEntity )
+                ->getA();
+    }
+
+
+    public function test_localInstanceCall_classConstantStringAlias() {
+        $testEntity = $this->localPhockitoInstance->mock( self::LOCAL_TestEntity_CLASS_ALIAS );
+        $testEntity->getA();
+
+        $this->localPhockitoInstance
+                ->verify( $testEntity )
+                ->getA();
+    }
+
+
 
 
 

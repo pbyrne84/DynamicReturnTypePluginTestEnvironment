@@ -167,7 +167,14 @@ class MaskedStringParameterTest extends PhockitoTestCase {
             $test_Foo_Model->getFoo();
             $this->testTypeHint( $test_Foo_Model );
         }
+    }
 
+    public function test_staticMethodClassConstant_list() {
+        $test_Foo_ModelList = PhockitoTestCase::parentMaskMockList( Test_Foo_Model::class );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model) {
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
     }
 
 
@@ -195,6 +202,17 @@ class MaskedStringParameterTest extends PhockitoTestCase {
             $test_Foo_Model->getFoo();
             $this->testTypeHint( $test_Foo_Model );
         }
-
     }
+
+
+    public function test_functionCallListClassConstant() {
+        $test_Foo_ModelList = maskMockList( Test_Foo_Model::class );
+        foreach ( $test_Foo_ModelList as $test_Foo_Model ) {
+            $test_Foo_Model->getFoo();
+            $this->testTypeHint( $test_Foo_Model );
+        }
+    }
+
+
+
 }

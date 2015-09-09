@@ -4,6 +4,8 @@ namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType;
 
 
 interface PHPUnit_Framework_MockObject_MockObject{
+
+    /** @return PHPUnit_Framework_MockObject_MockObject */
     public function isMock();
 }
 
