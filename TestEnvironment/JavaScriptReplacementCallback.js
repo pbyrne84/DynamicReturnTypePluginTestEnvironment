@@ -13,6 +13,13 @@ function replaceWithJavaScriptMask(  returnTypeNameSpace, returnTypeClass ) {
 
 //noinspection JSUnusedGlobalSymbols
 function replaceWithJavaScriptAliasing( returnTypeNameSpace, returnTypeClass  ){
+    api.writeToEventLog( "returnTypeNameSpace " +  returnTypeNameSpace);
+    api.writeToEventLog( "returnTypeClass " + returnTypeClass);
+
+    if( returnTypeClass == "xxxxxxx" ){
+        return 'DomDocument';
+    }
+
 
     if( returnTypeNameSpace == 'Entity' ) {
         if( returnTypeClass == 'User' ) {
