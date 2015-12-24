@@ -14,7 +14,6 @@ class FieldCallTest extends PhockitoTestCase {
 
     const LOCAL_TestEntity_STRING_ALIAS = TestEntity::CLASS_NAME_AS_STRING;
 
-    const JAVASCRIPT_REMAPPED_STRING = "xxxxxxx";
 
     /** @var Phockito */
     private $localPhockitoInstance;
@@ -183,7 +182,9 @@ class FieldCallTest extends PhockitoTestCase {
         $TestEntityCustomConst = $this->phockito->javascriptAliasingMock( self::LOCAL_TestEntity_STRING_ALIAS );
         $TestEntityCustomConst->getA();
 
-        $DOMDocumentJavascriptRemappedString = $this->phockito->javascriptAliasingMock( self::JAVASCRIPT_REMAPPED_STRING );
+        $DOMDocumentJavascriptRemappedString = $this->phockito->javascriptAliasingMock(
+                TestEntity::JAVASCRIPT_REMAPPED_STRING
+        );
         $DOMDocumentJavascriptRemappedString->saveHTML();
     }
 
