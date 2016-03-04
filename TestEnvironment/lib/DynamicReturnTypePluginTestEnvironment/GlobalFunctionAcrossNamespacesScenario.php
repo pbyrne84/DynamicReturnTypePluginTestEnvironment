@@ -52,24 +52,6 @@ namespace {
 
 }
 
-namespace DifferentNameSpace {
-    use BaseReality\Provider\Provider;
-
-    $provider = getProvider();
-
-    $implementingObj1 = $provider->make( \DomDocument::class );
-    $implementingObj1->createElement( "a" );
-
-    $provider2 = getProvider2();
-
-    $simpleXMLElement = $provider2->make( "" );
-    $simpleXMLElement->count();
-
-    $provider1 = new Provider();
-    $DOMDocument = $provider1->make( \DomDocument::class );
-    $DOMDocument->childNodes;
-
-}
 
 
 namespace a{

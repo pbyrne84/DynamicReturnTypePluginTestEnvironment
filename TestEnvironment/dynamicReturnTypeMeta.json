@@ -141,8 +141,23 @@
             "method"  : "getServiceUsingMask",
             "position": 0,
             "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\TestClasses\\%s"
+        },
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\SecondaryMatchingReturnType\\SecondaryMatchingTestCase",
+            "method"  : "mock",
+            "position": 0,
+            "mask"    : "\\DynamicReturnTypePluginTestEnvironment\\SecondaryMatchingReturnType\\Secondary%s"
+        },
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestServiceBrokerInterface",
+            "method"  : "createImplementation",
+            "position": 0
+        },
+        {
+            "class"   : "\\DynamicReturnTypePluginTestEnvironment\\TestServiceBrokerTrait",
+            "method"  : "createImplementation",
+            "position": 0
         }
-
     ],
     "functionCalls": [
         {
