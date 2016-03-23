@@ -1,6 +1,6 @@
 <?php
 
-namespace DynamicReturnTypePluginTestEnvironment\NonMatchingReturnType;
+namespace DynamicReturnTypePluginTestEnvironment\SecondaryMatchingReturnType;
 
 
 class NonMatchingObject {

@@ -1,9 +1,20 @@
 <?php
 
-namespace DynamicReturnTypePluginTestEnvironment\NonMatchingReturnType;
+namespace DynamicReturnTypePluginTestEnvironment\SecondaryMatchingReturnType;
 
 
-class NonMatchingTestCase {
+class SecondaryMaskedCreation{
+
+    /**
+     * @return $this
+     */
+    public function secondary(  ) {
+        return $this;
+    }
+
+}
+
+class SecondaryMatchingTestCase {
     const CLASS_NAME = __CLASS__;
 
     /** @var  NonMatchingObject */
@@ -29,3 +40,6 @@ class NonMatchingTestCase {
 
 
 }
+
+
+
