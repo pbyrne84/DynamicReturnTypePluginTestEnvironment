@@ -24,6 +24,20 @@ class MaskedStringParameterTest extends PhockitoTestCase {
         $this->testTypeHint( $test_Foo_Model );
     }
 
+
+    public function test_stringParentField_single_namespacedShouldBeTriedFirst(){
+        $test_Foo_Model = \DynamicReturnTypePluginTestEnvironment\OverriddenReturnType\ifInNameSpacedShouldBeMaskedMock( 'Foo' );
+        $test_Foo_Model->getFoo();
+
+        $this->testTypeHint( $test_Foo_Model );
+
+        $nonNamespaced = ifInNameSpacedShouldBeMaskedMock( 'Test_Foo_Model' );
+        $nonNamespaced->getFoo();
+        $this->testTypeHint( $nonNamespaced );
+    }
+
+
+
     public function test_stringParentField_list() {
         $test_Foo_ModelList = $this->phockito->maskMockList( 'Test_Foo_Model' );
         foreach( $test_Foo_ModelList as $test_Foo_Model ){

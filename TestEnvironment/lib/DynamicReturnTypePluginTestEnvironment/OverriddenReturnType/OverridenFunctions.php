@@ -18,6 +18,16 @@ namespace DynamicReturnTypePluginTestEnvironment\OverriddenReturnType {
     }
 
 
+    /**
+     * @param string $class
+     *
+     * this is to test that name space resolution works
+     */
+    function ifInNameSpacedShouldBeMaskedMock( $class ){
+
+    }
+
+
 }
 
 
@@ -56,4 +66,13 @@ namespace {
 
     }
 
+
+    /**
+     * @param string $class
+     *
+     * should not mask as not in namespace
+     */
+    function ifInNameSpacedShouldBeMaskedMock( $class ){
+
+    }
 }
