@@ -67,7 +67,7 @@
         ,
         {
             "class"   : "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PhockitoTestCase",
-            "method"  : "phpUnitPartialMock", 
+            "method"  : "phpUnitPartialMock",
             "position": 0,
             "mask"    : "%s|\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\PHPUnit_Framework_MockObject_MockObject"
         }
@@ -169,29 +169,33 @@
             "position": 0
         },
         {
+            "function": "\\DynamicReturnTypePluginTestEnvironment\\OverriddenReturnType\\ifInNameSpacedShouldBeMaskedMock",
+            "position": 0,
+            "mask"    : "Test_%s_Model"
+        },
+        {
             "function": "\\mock",
             "position": 0
-        }
-        ,
+        } ,
+         {
+            "function": "\\ifInNameSpacedShouldBeMaskedMock",
+            "position": 0
+        } ,
         {
             "function": "\\maskMock",
             "position": 0,
             "mask"    : "Test_%s_Model"
-        }
-        ,
+        },
         {
             "function": "\\maskMockList",
             "position": 0,
             "mask"    : "%s[]"
-        }
-        ,
-
+        },
         {
             "function": "\\aliasMock",
             "position": 0,
             "fileReturnTypeReplacementCall": ["GroovyReplacementCallback.groovy", "replaceWithGroovyAliasing"]
         }
-
     ]
 }
 
