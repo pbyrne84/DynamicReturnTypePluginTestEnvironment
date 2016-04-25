@@ -1,0 +1,10 @@
+{
+  "methodCalls": [
+    {
+      "class": "\\Arr",
+      "method": "getFirst",
+      "position": 0,
+      "fileReturnTypeReplacementCall": ["ArrayCallbacks.js", "arrayToSingleInstance"]
+    }
+  ]
+}
