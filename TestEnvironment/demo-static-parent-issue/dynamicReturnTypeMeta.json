@@ -1,0 +1,10 @@
+{
+  "methodCalls": [
+    {
+      "class": "\\ParentClass",
+      "method": "refreshEntity",
+      "position": 0,
+      "fileReturnTypeReplacementCall": ["Callbacks.js", "info"]
+    }
+  ]
+}
