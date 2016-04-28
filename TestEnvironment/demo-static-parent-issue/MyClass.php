@@ -10,6 +10,14 @@ class MyClass extends ParentClass
 		$refreshedEntity = self::refreshEntity($entity);
 		$refreshedEntity->entityMethod(); // auto-complete does not work for this
 	}
+
+	public function loadStaticProperty()
+	{
+		$user = StaticPropertyDataProvider::$user->getAccessToken();
+
+		$refreshedAccessToken = self::refreshEntity($user);
+		$refreshedAccessToken->isValid(); // auto-complete does not work for this
+	}
 }
 
 class FooEntity
