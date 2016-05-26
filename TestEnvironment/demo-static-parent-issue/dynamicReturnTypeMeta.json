@@ -5,6 +5,11 @@
       "method": "refreshEntity",
       "position": 0,
       "fileReturnTypeReplacementCall": ["Callbacks.js", "info"]
+    },
+    {
+      "class": "\\ParentClass",
+      "method": "refreshEntityWithoutCallback",
+      "position": 0
     }
   ]
 }
