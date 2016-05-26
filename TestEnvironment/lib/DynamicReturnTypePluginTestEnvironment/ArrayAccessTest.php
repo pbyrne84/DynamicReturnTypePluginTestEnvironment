@@ -21,7 +21,7 @@ class ArrayAccessTest {
     public function test_variableStringArrayAccess(  ) {
         $phockito = new Phockito();
         $domDocument = $phockito[ '\DomDocument' ];
-        $domDocument->saveXml();
+        $domDocument->saveXML();
     }
 
     public function test_variableClassReferenceAccess(  ) {
