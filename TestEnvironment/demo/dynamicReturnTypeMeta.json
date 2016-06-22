@@ -5,6 +5,17 @@
       "method": "getFirst",
       "position": 0,
       "fileReturnTypeReplacementCall": ["ArrayCallbacks.js", "arrayToSingleInstance"]
+    },
+    {
+      "class": "\\Arr",
+      "method": "getValueByCallback",
+      "position": 0,
+      "fileReturnTypeReplacementCall": ["ArrayCallbacks.js", "arrayToSingleInstance"]
+    },
+    {
+      "class": "\\Arr",
+      "method": "filterArray",
+      "position": 0
     }
   ]
 }
