@@ -35,6 +35,24 @@ class MyClass extends ParentClass
 		$refreshedAccessToken = self::refreshEntityWithoutCallback($user);
 		$refreshedAccessToken->isValid(); // auto-complete does not work for this
 	}
+
+	public function loadStaticPropertyDirectly()
+	{
+		$refreshedToken = self::refreshEntity(StaticPropertyDataProvider::$user->getAccessToken());
+		$refreshedToken->isValid(); // works fine
+
+		$refreshedUser = self::refreshEntity(StaticPropertyDataProvider::$user);
+		$refreshedUser->getAccessToken(); // auto-complete does not work for this
+	}
+
+	public function loadStaticPropertyDirectlyWithoutCallback()
+	{
+		$refreshedToken = self::refreshEntityWithoutCallback(StaticPropertyDataProvider::$user->getAccessToken());
+		$refreshedToken->isValid(); // works fine
+
+		$refreshedUser = self::refreshEntityWithoutCallback(StaticPropertyDataProvider::$user);
+		$refreshedUser->getAccessToken(); // auto-complete does not work for this
+	}
 }
 
 class FooEntity
