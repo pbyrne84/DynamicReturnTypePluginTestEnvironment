@@ -43,6 +43,19 @@ class Processor
 
 		$oneValue->boo(); // autocompletion does not work
 	}
+
+
+	/**
+	 * This is a complexity minimized version of processTwice ( Different classname for debugging)
+	 * @param \EdgeCase  $data
+	 */
+	public function processTwice2(   $data)
+	{
+		$filteredData = Arr::filterArray($data,"1stCall" );
+
+		$filteredData2 = Arr::filterArray2( $filteredData, "2ndCall"   );
+		$filteredData2->boo();
+	}
 }
 
 class Arr
@@ -57,6 +70,13 @@ class Arr
 		return array_filter($a, $callback);
 	}
 
+	public static function filterArray2(  $a, callable $callback = null )
+	{
+		return array_filter($a, $callback);
+	}
+
+
+
 	public static function getValueByCallback(array $a, callable $callback)
 	{
 		foreach ($a as $item) {
@@ -64,5 +84,12 @@ class Arr
 				return $item;
 			}
 		}
+	}
+}
+
+
+class EdgeCase{
+	public function boo(  ) {
+		
 	}
 }

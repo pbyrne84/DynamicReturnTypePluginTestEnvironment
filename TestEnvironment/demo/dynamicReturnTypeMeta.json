@@ -16,6 +16,12 @@
       "class": "\\Arr",
       "method": "filterArray",
       "position": 0
+    }   ,
+    {
+      "class": "\\Arr",
+      "method": "filterArray2",
+      "position": 0
     }
+
   ]
 }
