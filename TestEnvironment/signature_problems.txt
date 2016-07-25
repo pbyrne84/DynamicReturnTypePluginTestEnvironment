@@ -1,0 +1,10 @@
+Now - 2016.2.1
+#M#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mock.mock|#M#☘#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣.mock|#☘#M#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mock.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣
+
+
+#M#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mock.mock|#M#☘#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣.mock|#☘#M#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mock.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣|?
+
+
+Then - 2016.1.2
+#☘#M#☘#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣
+#☘#M#☘#M#C\DynamicReturnTypePluginTestEnvironment\ParentMethodCallTest.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣.mockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest♣|?
