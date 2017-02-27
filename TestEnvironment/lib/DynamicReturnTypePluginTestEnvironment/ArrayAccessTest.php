@@ -92,7 +92,7 @@ class ArrayAccessTest {
 
 
     public function test_ContainerToContainer_noneChaining(  ) {
-        $phockito = $this->phockito[ Phockito::class ];
+        $phockito = $this->phockito[ \DOMDocument::class ];
         $phockito[ \DomDocument::class]->attributes;
     }
 
