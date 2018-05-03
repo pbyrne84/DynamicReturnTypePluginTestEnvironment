@@ -25,7 +25,9 @@ class LocalMethodCallTest extends PhockitoTestCase
     public function test_localMethodCallCreatesInstanceThenChainedChildCall() {
         //signature	#Ђ#M#Ђ#M#C\DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest:localGetFullMockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest:localGetFullMockªDynamicReturnTypePluginTestEnvironment\LocalMethodCallTest
         $testFactory1 = $this->localGetFullMock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+
         $testFactory2 = $testFactory1->localGetFullMock( 'DynamicReturnTypePluginTestEnvironment\LocalMethodCallTest' );
+
         $testFactory2->test_parentMethod_classConstant();
     }
 

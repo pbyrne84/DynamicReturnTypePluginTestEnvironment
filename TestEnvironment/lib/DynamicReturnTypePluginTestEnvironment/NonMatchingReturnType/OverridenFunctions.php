@@ -9,7 +9,7 @@ namespace DynamicReturnTypePluginTestEnvironment\SecondaryMatchingReturnType {
      */
     function mock( /** @noinspection PhpUnusedParameterInspection */
             $class ) {
-        return '';
+        return null;
 
     }
 

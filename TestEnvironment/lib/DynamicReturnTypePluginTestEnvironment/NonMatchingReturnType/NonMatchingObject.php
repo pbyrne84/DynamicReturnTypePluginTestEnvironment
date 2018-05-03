@@ -25,13 +25,13 @@ class NonMatchingObject {
      */
     public function mock( /** @noinspection PhpUnusedParameterInspection */
             $mock ) {
-        return '';
+        return null;
     }
 
 
     public function maskMock( /** @noinspection PhpUnusedParameterInspection */
             $mock ) {
-        return '';
+        return null;
     }
 
 }

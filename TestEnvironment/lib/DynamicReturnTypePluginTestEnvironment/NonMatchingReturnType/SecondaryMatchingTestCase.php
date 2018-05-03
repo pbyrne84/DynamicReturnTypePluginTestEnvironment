@@ -27,6 +27,7 @@ class SecondaryMatchingTestCase {
      * @return string
      */
     public function verify( $class ) {
+        return null;
     }
 
 
@@ -36,6 +37,7 @@ class SecondaryMatchingTestCase {
      * @return \SimpleXMLElement
      */
     public function mock( $class ) {
+        return null;
     }
 
 

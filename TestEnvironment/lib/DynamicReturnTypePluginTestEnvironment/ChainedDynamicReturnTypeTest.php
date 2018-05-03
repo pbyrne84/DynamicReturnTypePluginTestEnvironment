@@ -39,7 +39,7 @@ class ChainedDynamicReturnTypeTest
         //signature	signaturesignature	#Ђ#M#M#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ClassBroker.getClassWithoutMask:getServiceWithoutMask:#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\TestService.CLASS_NAME|?
 
         $testService = $this->classBroker->getClassWithoutMask(ServiceBroker::CLASS_NAME)->getServiceWithoutMask(TestService::CLASS_NAME);
-
+//signature	#M#M#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ClassBroker.getClassWithoutMask.getServiceWithoutMask|#☘#M#M#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ClassBroker.getClassWithoutMask.getServiceWithoutMaskª#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\TestService.CLASS_NAME♣|#M#☘#M#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ClassBroker.getClassWithoutMaskª#K#C\DynamicReturnTypePluginTestEnvironment\TestClasses\ServiceBroker.CLASS_NAME♣.getServiceWithoutMask
         $testService->run();
     }
 

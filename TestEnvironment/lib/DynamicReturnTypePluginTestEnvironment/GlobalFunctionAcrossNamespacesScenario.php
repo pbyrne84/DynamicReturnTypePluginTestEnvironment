@@ -16,6 +16,7 @@ namespace BaseReality\Provider {
          * @return \SimpleXMLElement
          */
         function make($foo) {
+            return null;
         }
     }
 
@@ -26,6 +27,7 @@ namespace BaseReality\Provider {
          * @return string
          */
         function make($foo) {
+            return null;
         }
     }
 
@@ -59,7 +61,7 @@ namespace a{
      * @return \BaseReality\Provider\Provider
      */
     function getProvider(){
-
+        return null;
     }
 
     /**

@@ -27,12 +27,12 @@ class TestSingleton {
      * @return Phockito
      */
     public function getPhockito() {
-
+        return null;
     }
 
 
     public function getRepository( $name ){
-
+        return null;
     }
 
 
