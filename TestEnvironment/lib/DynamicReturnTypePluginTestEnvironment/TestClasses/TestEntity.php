@@ -6,7 +6,7 @@ namespace DynamicReturnTypePluginTestEnvironment\TestClasses;
 class TestEntity {
     const CLASS_NAME = __CLASS__;
 
-    const CLASS_NAME_AS_STRING  = 'DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity';
+    const CLASS_NAME_AS_STRING  = '\DynamicReturnTypePluginTestEnvironment\TestClasses\TestEntity';
 
 
     const JAVASCRIPT_REMAPPED_STRING = "xxxxxxx";

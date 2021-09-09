@@ -155,7 +155,7 @@ class MaskedStringParameterTest extends PhockitoTestCase {
     public function test_parentMethodClassConstant_list() {
         $test_Foo_ModelList = $this->parentMaskMockList( Test_Foo_Model::class );
         foreach ( $test_Foo_ModelList as $test_Foo_Model) {
-           // $test_Foo_Model->getFoo();
+            $test_Foo_Model->getFoo();
             $this->testTypeHint( $test_Foo_Model );
         }
     }
